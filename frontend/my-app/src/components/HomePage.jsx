@@ -6,7 +6,7 @@ export default function Invoices() {
     <main>
     	<div class="applogo">Logo</div>
     	<div class="youravatar">
-    		<img src="https://www.blexar.com/avatar.png" class="youravatarpic" alt="youravatar"/>
+    		<a href="userpage"><img src="https://www.blexar.com/avatar.png" class="youravatarpic" alt="youravatar"/></a>
     	</div>
     	<form>
     	<div class="createpost">

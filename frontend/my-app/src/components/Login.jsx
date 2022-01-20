@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
+import UserDataService from "../services/login.js";
 
 const Login = ({ isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,11 @@ const Login = ({ isAuthenticated }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    UserDataService.loginUser(email, password).
+      then(response => {
+        console.log(`Response data: ${JSON.stringify(response.data)}`)
+      })
+    
   };
 
   return (

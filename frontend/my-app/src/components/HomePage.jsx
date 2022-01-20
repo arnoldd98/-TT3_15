@@ -4,14 +4,14 @@ import { Container } from "react-bootstrap";
 export default function Invoices() {
   return (
     <main>
-    	<div class="applogo">Logo</div>
+    	<div class="applogo">Chirpy</div>
     	<div class="youravatar">
     		<a href="userpage"><img src="https://www.blexar.com/avatar.png" class="youravatarpic" alt="youravatar"/></a>
     	</div>
     	<form>
     	<div class="createpost">
     		<div class="form-group">
-      			<textarea class="form-control" id="exampleTextarea" rows="4" placeholder="What are you thinking about?" maxlength="280"></textarea>
+      			<textarea class="form-control" id="exampleTextarea" rows="4" placeholder="What are you chirping about?" maxlength="280"></textarea>
       			<div class="send"><button type="submit" class="btn btn-primary sendpost">Send</button></div>
     		</div>
     	</div>

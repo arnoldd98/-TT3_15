@@ -16,7 +16,6 @@ def add_post():
         user_id = data['user_id']
 
         try:
-            
             post = data_class.Post(user_id=user_id, 
                     post_title=data['post_title'], 
                     post_description=data['post_description'], 
@@ -85,6 +84,28 @@ def get_user_posts(user_id):
         return jsonify(user_posts)
     except:
         return jsonify({'error': f'SQL Query error when finding posts by userid {user_id}'})
+
+@bp.route('/all', methods = ['GET'])
+def get_post():
+    try:
+        user_posts = db.session.query(data_class.Post).all()
+        return jsonify(user_posts)
+    except:
+        return jsonify({'error': f'SQL Query error when finding posts by userid {user_id}'})
+
+    # for i in range(len(user_id)):
+
+    #     try:
+    #         post = data_class.Post(user_id=user_id,
+    #                 post_title=data['post_title'],
+    #                 post_description=data['post_description'],
+    #                 post_image=data['post_image'])            
+    #         db.session.get(post)        
+    #         db.session.commit()
+    #         return jsonify({'message': f'All post shown'})
+
+    #     except:
+    #         return jsonify({'error': f'SQL error'})
 
 
         

@@ -1,8 +1,14 @@
 import dbm
+from re import S
 from this import d
 from backend import db
+from dataclasses import dataclass
 
+@dataclass
 class LikedPost(db.Model):
+    user_id: int
+    post_id: int
+
     user_id = db.Column('User_ID',db.Integer,primary_key = True)
     post_id = db.Column('Post_ID',db.Integer,primary_key = True)
 
@@ -10,8 +16,14 @@ class LikedPost(db.Model):
         self.user_id = user_id
         self.post_id = post_id
 
-
+@dataclass
 class Post(db.Model):
+    post_id: int
+    user_id: int
+    post_title: str
+    post_description: str
+    post_image: str
+
     post_id = db.Column('Post_ID',db.Integer,primary_key = True)
     user_id = db.Column('User_ID', db.Integer, nullable=False)
     post_title = db.Column('Post_Title',db.String(50))
@@ -25,7 +37,12 @@ class Post(db.Model):
         self.post_description = post_description
         self.post_image = post_image
 
+@dataclass
 class PostComment(db.Model):
+    comment_id: int
+    user_id: int
+    post_id: int
+
     comment_id = db.Column('Comment_ID',db.Integer,primary_key = True)
     user_id = db.Column('User_ID',db.Integer)
     post_id = db.Column('Post_ID',db.Integer)
@@ -38,7 +55,18 @@ class PostComment(db.Model):
         self.post_id = post_id
         self.comment = comment
 
+@dataclass
 class User(db.Model):
+    user_id: int
+    password: str
+    name: str
+    age: int
+    birthday: str
+    email: str
+    phone: str
+    city: str
+    country: str
+
     user_id = db.Column('User_ID',db.Integer,primary_key = True)
     password = db.Column('Password',db.String(50))
     name = db.Column('Name',db.String(50))

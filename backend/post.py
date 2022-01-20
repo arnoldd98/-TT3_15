@@ -1,5 +1,6 @@
 from flask import Blueprint, request, flash, jsonify
 from backend import db
+from flask_restful import abort
 from . import data_class
 
 bp = Blueprint('post', __name__, url_prefix='/post')
@@ -53,8 +54,9 @@ def delete_post():
     else: 
         post_id = data['post_id']
         user_id = data['user_id']
+
         try:
-            db.session.query().\
+            db.session.query(data_class.Post).\
                 filter(data_class.Post.user_id == data['user_id']).\
                 filter(data_class.Post.post_id == data['post_id']).\
                 delete()
@@ -62,3 +64,22 @@ def delete_post():
             return jsonify({'message': f'Post {post_id} successfully deleted'})
         except:
             return jsonify({'error': f'Unable to find post made by user {user_id} - check if post {post_id} is made by user'})
+
+
+@bp.route('/<user_id>', methods=['GET'])
+def get_user_posts(user_id):
+    data = request.get_json()
+    user = db.session.query(data_class.User).filter_by(user_id=user_id).first()
+    if not user:
+        abort(404, message=f"cannot find user with id {user_id}!")
+    
+    try:
+        user_posts = db.session.query(data_class.Post).\
+            filter(data_class.Post.user_id == data['user_id']).\
+            all()
+        return jsonify(user_posts)
+    except:
+        return jsonify({'error': f'SQL Query error when finding posts by userid {user_id}'})
+
+
+        

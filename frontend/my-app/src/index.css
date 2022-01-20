@@ -1,60 +1,56 @@
-.applogo{
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	margin-top: 30px;
-	top:0;
-	font-size: 50px;
+.applogo {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  top: 0;
+  font-size: 50px;
 }
 
-.youravatar{
-	position: relative;
-	width: 100%;
+.youravatar {
+  position: relative;
+  width: 100%;
 }
 
-.youravatarpic{
-	border: 5px solid white;
-	margin: 50px 10px 40px 80px;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	position: relative;
+.youravatarpic {
+  border: 5px solid white;
+  margin: 50px 10px 40px 80px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
 }
 
-.avatarpic{
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	position: relative;
-	margin-right: 5px;
+.avatarpic {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 5px;
 }
 
-.leftalign{
-	text-align: left;
+.leftalign {
+  text-align: left;
 }
 
-.send{
-	width: 100%;
+.send {
+  width: 100%;
 }
 
-.sendpost{
-	margin-top: -50px;
-	margin-right: 10px;
-	right: 0;
-	position: absolute;
+.sendpost {
+  margin-top: -50px;
+  margin-right: 10px;
+  right: 0;
+  position: absolute;
 }
 
 .createpost {
-	text-align: center;
-	width: 40%;
-	margin: auto;
-	position: relative;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  position: relative;
 }
 
 .oldpost {
-	margin-top: 100px;
-}
-
-.container {
-  padding-left: 50%;
+  margin-top: 100px;
 }

@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import HomePage from "./components/HomePage";
+import UserPage from "./components/UserPage";
 
 
 ReactDOM.render(
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="HomePage" element={<HomePage />} />
+      <Route path="UserPage" element={<UserPage />} />     
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

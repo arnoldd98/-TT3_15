@@ -12,6 +12,7 @@
   width: 100%;
 }
 
+
 .youravatarpic {
   border: 5px solid white;
   margin: 50px 10px 40px 80px;
@@ -19,6 +20,33 @@
   height: 100px;
   border-radius: 50%;
   position: relative;
+=======
+h3 {
+	color: white;
+}
+
+.avatarmiddle{
+	position: relative;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 100px;
+}
+
+.youravatarpicbig {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	position: relative;
+}
+
+.youravatarpic{
+	border: 5px solid white;
+	margin: 50px 10px 40px 80px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: relative;
+
 }
 
 .avatarpic {

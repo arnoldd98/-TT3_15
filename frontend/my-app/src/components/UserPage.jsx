@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 export default function Invoices() {
   return (
     <main>
-    	<div class="applogo">Logo</div>
+    	<div class="applogo">Chirpy</div>
     	<div class="youravatar">
     		<a href="homepage"><img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/blue_repicthousebase_1484336386-1.png" class="youravatarpic" alt="youravatar"/></a>
     	</div>
@@ -16,7 +16,7 @@ export default function Invoices() {
     	<form>
     	<div class="createpost">
     		<div class="form-group">
-      			<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="What are you thinking about?" maxlength="280"></textarea>
+      			<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="What are you chirping about?" maxlength="280"></textarea>
       			<div class="send"><button type="submit" class="btn btn-primary sendpost">Send</button></div>
     		</div>
     	</div>

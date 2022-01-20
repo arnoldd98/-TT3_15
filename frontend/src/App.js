@@ -4,9 +4,11 @@ import HomePage from "./components/HomePage";
 
 function App() {
   return (
-    <div>
+    <>
+      <div>Hello</div>
+
       <HomePage />
-    </div>
+    </>
   );
 }
 

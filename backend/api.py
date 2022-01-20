@@ -4,6 +4,7 @@ from flask_restful import abort
 from flask_sqlalchemy import SQLAlchemy
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
+import jwt
 
 app = Flask(__name__)
 

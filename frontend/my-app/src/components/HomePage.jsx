@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 export default function Invoices() {
   return (
     <main>
-    	<div class="applogo">Chirpy</div>
+    	<div class="applogo"><strong>chirpy</strong></div>
     	<div class="youravatar">
     		<a href="userpage"><img src="https://www.blexar.com/avatar.png" class="youravatarpic" alt="youravatar"/></a>
     	</div>

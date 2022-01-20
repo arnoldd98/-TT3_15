@@ -9,14 +9,14 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import homepage from "./components/HomePage";
+import HomePage from "./components/HomePage";
 
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="homepage" element={<homepage />} />
+      <Route path="HomePage" element={<HomePage />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

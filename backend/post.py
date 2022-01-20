@@ -91,7 +91,7 @@ def get_post():
         user_posts = db.session.query(data_class.Post).all()
         return jsonify(user_posts)
     except:
-        return jsonify({'error': f'SQL Query error when finding posts by userid {user_id}'})
+        return jsonify({'error': f'SQL Query error when finding posts'})
 
     # for i in range(len(user_id)):
 

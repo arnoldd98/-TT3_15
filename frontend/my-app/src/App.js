@@ -6,10 +6,11 @@ import Login from "./components/Login";
 import { Outlet, Link } from "react-router-dom";
 
 function App() {
+  const isAuthenticated = true;
   return (
     <>
-      <div>Hello</div>
-      <Link to="/HomePage">HomePage</Link>
+      <Login isAuthenticated={isAuthenticated} />
+      <Link to="/HomePage">Homepage</Link>
       <Outlet />
     </>
   );

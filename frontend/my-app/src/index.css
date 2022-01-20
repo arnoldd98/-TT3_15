@@ -55,5 +55,6 @@
 	margin-top: 100px;
 }
 
-
-
+.container {
+  padding-left: 50%;
+}

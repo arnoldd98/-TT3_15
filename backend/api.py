@@ -1,5 +1,6 @@
 import email
 from flask import Flask, request, flash, jsonify
+from flask_restful import abort
 from flask_sqlalchemy import SQLAlchemy
 import uuid
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -44,20 +45,38 @@ def update_post():
             except:
                 flash(f'Unable to find post made by user {user_id} - check if post {post_id} is made by user')
 
+# create user
 @app.route('/user', methods=['POST'])
 def create_user():
     data = request.get_json()
     print(data)
+    if db.session.query(User).filter_by(name=data['name']).all():
+        abort(404, message="name already exists")
     #hashed_password = generate_password_hash(data['password'],method ='sha256')
-    #hashed_password = data['password']
-    new_user = User(user_id=data['user_id'],name=data['name'],password=data['password'],age=data['age'],
+    hashed_password = data['password']
+    new_user = User(user_id=data['user_id'],name=data['name'],password=hashed_password,age=data['age'],
                     birthday=data['birthday'],email=data['email'], phone=data['phone'],city=data['city'], 
                     country=data['country'])
-                    
+
     db.session.add(new_user)
     db.session.commit()
 
-    return jsonify({'message':'New user created'})
+    return jsonify({'message':'New user created'}), 200
+
+# login
+@app.route('/user/<emailid>/<passwd>', methods=['GET'])
+def get_one_user(emailid,passwd):
+    user = db.session.query(User).filter_by(email=emailid).first()
+    if not user:
+        abort(404, message="email/password does not match!")
+    print(user.name)
+    print(passwd)
+    if passwd != user.password:
+        return jsonify({'message':'WRONG PASSWORD!!!'}), 401 
+    
+    elif passwd == user.password:
+        return jsonify({'message':'Welcome!'+user.name+'! :)'}), 200
+
 
 class LikedPost(db.Model):
     user_id = db.Column('User_ID',db.Integer,primary_key = True)

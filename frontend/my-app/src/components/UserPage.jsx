@@ -6,12 +6,17 @@ export default function Invoices() {
     <main>
     	<div class="applogo"><strong>chirpy</strong></div>
     	<div class="youravatar">
-    		<a href="userpage"><img src="https://www.blexar.com/avatar.png" class="youravatarpic" alt="youravatar"/></a>
+    		<a href="homepage"><img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/blue_repicthousebase_1484336386-1.png" class="youravatarpic" alt="youravatar"/></a>
+    	</div>
+    	<div class="avatarmiddle">
+    		<img src="https://www.blexar.com/avatar.png" class="youravatarpicbig" alt="youravatar"/>
+    		<br/><br/>
+    		<h3>@user010101</h3>
     	</div>
     	<form>
     	<div class="createpost">
     		<div class="form-group">
-      			<textarea class="form-control" id="exampleTextarea" rows="4" placeholder="What are you chirping about?" maxlength="280"></textarea>
+      			<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="What are you chirping about?" maxlength="280"></textarea>
       			<div class="send"><button type="submit" class="btn btn-primary sendpost">Send</button></div>
     		</div>
     	</div>
@@ -21,7 +26,7 @@ export default function Invoices() {
     			<div class="card-body">
     				<div class="leftalign">
     					<img src="https://www.blexar.com/avatar.png" class="avatarpic"/>
-    					<span class="username">User0012324324</span>
+    					<span class="username">user010101</span>
     					<br/><br/>
     					<p class="card-text">Walking up and down the aisles for what seems like hours. Walking up and down the aisles for what seems like hours.</p>
     				</div>
@@ -33,7 +38,7 @@ export default function Invoices() {
     			<div class="card-body">
     				<div class="leftalign">
     					<img src="https://www.blexar.com/avatar.png" class="avatarpic"/>
-    					<span class="username">User0012324324</span>
+    					<span class="username">user010101</span>
     					<br/><br/>
     					<p class="card-text">Walking up and down the aisles for what seems like hours. Walking up and down the aisles for what seems like hours.</p>
     				</div>
